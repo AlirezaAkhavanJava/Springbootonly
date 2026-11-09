@@ -9,7 +9,10 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @Setter
 @Getter
-@Component
 public class SmartProcess implements AProcess {
-    private final AccountOwner accountOwner;
+    private  AccountOwner accountOwner;
+
+    public void setAccountOwner(AccountOwner accountOwner) {
+        this.accountOwner = accountOwner;
+    }
 }

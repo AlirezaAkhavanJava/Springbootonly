@@ -6,11 +6,10 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Service;
 
-@Service
 @Setter
 @AllArgsConstructor
 @Getter
-public class DumService implements AProcess {
+public class DumService implements AProcess  {
     private final String author;
     private final AccountOwner owner;
 }
