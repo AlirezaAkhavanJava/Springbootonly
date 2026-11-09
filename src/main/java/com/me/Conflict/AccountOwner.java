@@ -1,4 +1,4 @@
-package com.me;
+package com.me.Conflict;
 
 import jakarta.persistence.*;
 import lombok.*;

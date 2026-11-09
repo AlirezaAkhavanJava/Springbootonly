@@ -1,6 +1,6 @@
 package com.me.dummy;
 
-import com.me.AccountOwner;
+import com.me.Conflict.AccountOwner;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

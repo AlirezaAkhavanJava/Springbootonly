@@ -1,6 +1,6 @@
 package com.me.lifecycle;
 
-import com.me.AccountOwner;
+import com.me.Conflict.AccountOwner;
 import jakarta.annotation.Nonnull;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanDefinition;

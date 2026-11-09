@@ -1,6 +1,6 @@
 package com.me.dummy;
 
-import com.me.AccountOwner;
+import com.me.Conflict.AccountOwner;
 import lombok.NonNull;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

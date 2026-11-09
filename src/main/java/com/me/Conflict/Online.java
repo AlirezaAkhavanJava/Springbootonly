@@ -1,4 +1,4 @@
-package com.me;
+package com.me.Conflict;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
 package com.me.lifecycle;
 
-import com.me.AccountOwner;
+import com.me.Conflict.AccountOwner;
 import lombok.Getter;
 import lombok.Setter;
 

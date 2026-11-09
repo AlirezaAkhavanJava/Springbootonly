@@ -1,7 +1,6 @@
 package com.me.dummy;
 
-import com.me.AccountOwner;
-import lombok.AllArgsConstructor;
+import com.me.Conflict.AccountOwner;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
