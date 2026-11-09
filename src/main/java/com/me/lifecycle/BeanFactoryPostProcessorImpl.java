@@ -23,12 +23,17 @@ public class BeanFactoryPostProcessorImpl implements BeanDefinitionRegistryPostP
 
         BeanDefinition definition = BeanDefinitionBuilder
                 .genericBeanDefinition(DumService.class)
-                .addPropertyValue("owner", AccountOwner.builder().username("Bob Smith").build())
+                .addPropertyValue("author", "Alireza")
+                .addPropertyValue(
+                        "owner",
+                        AccountOwner.builder()
+                                .username("Bob Smith")
+                                .build()
+                )
                 .setScope(BeanDefinition.SCOPE_PROTOTYPE)
-                .setAbstract(true)
                 .setLazyInit(true)
-                .setPrimary(true)
                 .getBeanDefinition();
+
         registry.registerBeanDefinition("dumService", definition);
 
     }

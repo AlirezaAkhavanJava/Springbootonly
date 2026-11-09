@@ -1,15 +1,13 @@
 package com.me.lifecycle;
 
 import com.me.AccountOwner;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.stereotype.Service;
 
-@Setter
-@AllArgsConstructor
 @Getter
+@Setter
 public class DumService implements AProcess  {
-    private final String author;
-    private final AccountOwner owner;
+    private  String author;
+    private  AccountOwner owner;
+
 }
