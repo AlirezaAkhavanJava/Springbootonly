@@ -1,4 +1,4 @@
-package com.me;
+package com.me.exception;
 
 public class AccountOwnerAlreadyExists extends RuntimeException {
     public AccountOwnerAlreadyExists(String message) {

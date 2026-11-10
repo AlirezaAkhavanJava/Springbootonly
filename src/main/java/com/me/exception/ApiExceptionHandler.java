@@ -1,4 +1,4 @@
-package com.me;
+package com.me.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;

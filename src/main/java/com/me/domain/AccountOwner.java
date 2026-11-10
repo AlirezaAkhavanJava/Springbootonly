@@ -1,4 +1,4 @@
-package com.me;
+package com.me.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
