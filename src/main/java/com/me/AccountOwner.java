@@ -1,4 +1,4 @@
-package com.me.Conflict;
+package com.me;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -22,7 +22,10 @@ public class AccountOwner {
     private String username;
 
     @Column(nullable = false)
-    private String password;
+    private String passwordHash;
+
+    @Column(unique = true, nullable = false)
+    private String email;
 
 
 }
