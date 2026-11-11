@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.Instant;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -42,7 +43,7 @@ public class AccountOwner {
     private Instant createdAt = Instant.now();
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "role", nullable = false, insertable = false, updatable = false)
+    @Column(name = "user_role", nullable = false, insertable = false, updatable = false)
     private AccountOwnerRole role = AccountOwnerRole.USER;
 
 
