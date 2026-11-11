@@ -1,7 +1,7 @@
 package com.me.representation;
 
-import com.me.domain.CreateAccountOwnerRequest;
-import com.me.domain.CreateAccountOwnerRespond;
+import com.me.domain.dto.CreateAccountOwnerRequest;
+import com.me.domain.dto.CreateAccountOwnerRespond;
 import com.me.domain.mapper.AccountOwnerMapper;
 import com.me.service.AccountOwnerService;
 import jakarta.validation.Valid;

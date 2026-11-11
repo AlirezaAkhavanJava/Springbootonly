@@ -13,5 +13,19 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
+    <data-source name="trash@localhost" uuid="67a2f943-7b83-4ce6-b3c4-22d3a7afda4f">
+      <database-info product="PostgreSQL" version="18.6 (Debian 18.6-1.pgdg13+2)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.7.13" dbms="POSTGRES" exact-version="18.6" exact-driver-version="42.7">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <user-name>postgres</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
   </component>
 </project>

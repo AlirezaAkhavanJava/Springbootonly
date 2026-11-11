@@ -1,4 +1,4 @@
-package com.me.domain;
+package com.me.domain.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

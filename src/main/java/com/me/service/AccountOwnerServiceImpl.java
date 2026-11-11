@@ -1,10 +1,10 @@
 package com.me.service;
 
 
-import com.me.domain.AccountOwner;
+import com.me.domain.model.AccountOwner;
 import com.me.domain.mapper.AccountOwnerMapper;
-import com.me.domain.CreateAccountOwnerRequest;
-import com.me.domain.CreateAccountOwnerRespond;
+import com.me.domain.dto.CreateAccountOwnerRequest;
+import com.me.domain.dto.CreateAccountOwnerRespond;
 import com.me.exception.AccountOwnerAlreadyExists;
 import com.me.exception.AccountOwnerNotExistsException;
 import com.me.persistance.AccountOwnerRepository;
