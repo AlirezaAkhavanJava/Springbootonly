@@ -1,8 +1,9 @@
-package com.me.domain;
+package com.me.domain.model;
 
-import com.me.domain.model.AccountOwner;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.util.UUID;
@@ -19,10 +20,11 @@ public class orders {
     private UUID id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(
             name = "account_owner_id",
             nullable = false,
-            foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "fk_order_account_owner")
+            foreignKey = @ForeignKey(name = "fk_order_account_owner")
     )
     private AccountOwner accountOwner;
 

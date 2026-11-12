@@ -1,0 +1,1 @@
+ALTER TABLE account_user DROP CONSTRAINT uk8xfp8m72fn08s678we7lq5lou;
