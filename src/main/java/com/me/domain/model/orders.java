@@ -6,6 +6,8 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.annotations.UuidGenerator;
 
+import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.UUID;
 
 @NoArgsConstructor
@@ -28,4 +30,15 @@ public class orders {
     )
     private AccountOwner accountOwner;
 
+    @Column(name = "order_name", nullable = false)
+    private String orderName;
+
+    @Column(name = "price", nullable = false, precision = 12, scale = 2)
+    private BigDecimal price;
+
+    @Column(name = "payment_code", nullable = false, unique = true, updatable = false, length = 64)
+    private String paymentCode;
+
+    @Column(name = "purchased_at", nullable = false, updatable = false)
+    private Instant purchasedAt = Instant.now();
 }
