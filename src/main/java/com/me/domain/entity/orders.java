@@ -1,4 +1,4 @@
-package com.me.domain.model;
+package com.me.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

@@ -1,6 +1,6 @@
 package com.me.domain.mapper;
 
-import com.me.domain.model.AccountOwner;
+import com.me.domain.entity.AccountOwner;
 import com.me.domain.dto.CreateAccountOwnerRequest;
 import com.me.domain.dto.CreateAccountOwnerRespond;
 import org.springframework.stereotype.Component;

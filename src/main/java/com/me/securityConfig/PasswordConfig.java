@@ -1,4 +1,4 @@
-package com.me.configuration;
+package com.me.securityConfig;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,6 +9,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class PasswordConfig {
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder(24);
+        return new BCryptPasswordEncoder(14);
     }
 }

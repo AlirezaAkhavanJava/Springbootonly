@@ -1,7 +1,7 @@
 package com.me.persistance;
 
 import com.me.domain.AccountOwnerRole;
-import com.me.domain.model.AccountOwner;
+import com.me.domain.entity.AccountOwner;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -23,5 +23,7 @@ public interface AccountOwnerRepository extends JpaRepository<AccountOwner, Long
 
     @Query("SELECT a FROM AccountOwner a WHERE a.role = :role")
     List<AccountOwner> findAllByRole(@Param("role") AccountOwnerRole role);
+
+    boolean existsByEmail(String email);
 
 }

@@ -17,15 +17,16 @@ public class AccountOwnerController {
     private final AccountOwnerService accountOwnerService;
     private final AccountOwnerMapper accountOwnerMapper;
 
-    @ResponseStatus(HttpStatus.CREATED)
+
     @PostMapping("/new")
+    @ResponseStatus(HttpStatus.CREATED)
     public CreateAccountOwnerRespond createAccount(@Valid @RequestBody CreateAccountOwnerRequest request) {
         return accountOwnerService.createAccount(request);
 
     }
 
     @GetMapping("{identifier}")
-    public CreateAccountOwnerRespond get(@PathVariable(name = "identifier") String identifier) {
+    public CreateAccountOwnerRespond get(@PathVariable String identifier) {
         return accountOwnerMapper.fromAccountOwner(accountOwnerService.findAccountOwnerByUsernameOrEmail(identifier));
     }
 }
