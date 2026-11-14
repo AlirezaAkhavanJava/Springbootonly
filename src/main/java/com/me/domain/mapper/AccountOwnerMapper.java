@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class AccountOwnerMapper {
 
     public CreateAccountOwnerRespond fromAccountOwner(AccountOwner accountOwner) {
-        return new CreateAccountOwnerRespond(accountOwner.getId(), accountOwner.getUsername());
+        return new CreateAccountOwnerRespond(accountOwner.getPublicId(), accountOwner.getUsername());
     }
 
     public AccountOwner toAccountOwner(CreateAccountOwnerRequest createAccountOwnerRequest) {

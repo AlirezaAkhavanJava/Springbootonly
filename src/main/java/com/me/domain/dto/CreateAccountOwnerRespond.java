@@ -1,7 +1,9 @@
 package com.me.domain.dto;
 
+import java.util.UUID;
+
 public record CreateAccountOwnerRespond(
-        Long id,
+        UUID publicId,
         String username
 ) {
 }

@@ -1,5 +1,6 @@
 package com.me.securityConfig;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -9,10 +10,11 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @Configuration
 public class SecurityConfig {
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) {
         http.httpBasic(Customizer.withDefaults()).authorizeHttpRequests(
                         authorize -> authorize
-                                .requestMatchers("api/t/**").permitAll()
+                                .requestMatchers("/api/owner/**").permitAll()
                                 .anyRequest().authenticated()
 
                 ).formLogin(Customizer.withDefaults())

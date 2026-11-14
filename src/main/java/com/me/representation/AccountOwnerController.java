@@ -10,7 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/owner")
+@RequestMapping("/api/owner")
 @RequiredArgsConstructor
 public class AccountOwnerController {
 

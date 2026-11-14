@@ -3,8 +3,10 @@ package com.me.domain.entity;
 import com.me.domain.AccountOwnerRole;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.time.Instant;
+import java.util.UUID;
 
 @NoArgsConstructor
 @Getter
@@ -27,6 +29,10 @@ public class AccountOwner {
     @Column(nullable = false, updatable = false)
     @Setter(AccessLevel.NONE)
     private Long id;
+
+    @UuidGenerator(style = UuidGenerator.Style.RANDOM)
+    @Column(name = "public_id", nullable = false, updatable = false)
+    private UUID publicId;
 
     @Column(unique = true, nullable = false)
     private String username;
@@ -56,6 +62,7 @@ public class AccountOwner {
 
 
     @Builder
+    @SuppressWarnings("unused")
     public AccountOwner(
             String username,
             String passwordHash,
