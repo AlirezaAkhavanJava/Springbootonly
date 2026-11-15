@@ -1,5 +1,6 @@
 package com.me.domain.mapper;
 
+import com.me.domain.dto.AccountOwnerResponse;
 import com.me.domain.entity.AccountOwner;
 import com.me.domain.dto.CreateAccountOwnerRequest;
 import com.me.domain.dto.CreateAccountOwnerRespond;
@@ -18,5 +19,9 @@ public class AccountOwnerMapper {
                 .passwordHash(createAccountOwnerRequest.passwordHash())
                 .email(createAccountOwnerRequest.email())
                 .build();
+    }
+
+    public AccountOwnerResponse toAccountOwnerResponse(AccountOwner accountOwner) {
+        return new AccountOwnerResponse(accountOwner.getUsername(), accountOwner.getPublicId());
     }
 }

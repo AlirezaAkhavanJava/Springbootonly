@@ -1,6 +1,7 @@
 package com.me.service;
 
 
+import com.me.domain.dto.AccountOwnerResponse;
 import com.me.domain.entity.AccountOwner;
 import com.me.domain.mapper.AccountOwnerMapper;
 import com.me.domain.dto.CreateAccountOwnerRequest;
@@ -9,6 +10,7 @@ import com.me.exception.AccountOwnerAlreadyExists;
 import com.me.exception.AccountOwnerNotExistsException;
 import com.me.persistance.AccountOwnerRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -47,5 +49,12 @@ public class AccountOwnerServiceImpl implements AccountOwnerService {
                 .passwordHash(hash)
                 .build();
         return mapper.fromAccountOwner(accountOwnerRepository.save(accountOwner));
+    }
+
+    @Override
+    public AccountOwnerResponse findByUsername(String username) {
+        AccountOwner owner = accountOwnerRepository.findByUsername(username)
+                .orElseThrow(() -> new AccountOwnerNotExistsException("Account owner not exists"));
+        return mapper.toAccountOwnerResponse(owner);
     }
 }
