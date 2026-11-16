@@ -29,7 +29,12 @@ public class ApiExceptionHandler {
     @ExceptionHandler(AccountOwnerAlreadyExists.class)
     ProblemDetail notFound(AccountOwnerAlreadyExists exception) {
         log.warn("Account owner already exists: {}", exception.getMessage());
-        return ProblemDetail.forStatusAndDetail(HttpStatus.CONFLICT, exception.getMessage());
+        ProblemDetail problem = ProblemDetail.forStatusAndDetail(
+                HttpStatus.CONFLICT,
+                exception.getMessage()
+        );
+        problem.setTitle("Account Owner Already Exists");
+        return problem;
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
