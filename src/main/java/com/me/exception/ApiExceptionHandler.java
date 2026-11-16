@@ -82,4 +82,12 @@ public class ApiExceptionHandler {
                 "Something went wrong. Please try again later."
         );
     }
+
+    @ExceptionHandler(ConstraintViolationException.class)
+    public ProblemDetail handleConstraintViolation(ConstraintViolationException ex) {
+        ProblemDetail problem = ProblemDetail.forStatus(HttpStatus.BAD_REQUEST);
+        problem.setTitle("Invalid request parameter");
+        problem.setDetail(ex.getMessage());
+        return problem;
+    }
 }

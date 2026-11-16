@@ -25,7 +25,7 @@ public record CreateAccountOwnerRequest(
 
         @NotBlank(message = "Email cannot be blank")
         @Email(message = "Invalid email address")
-        @Size(min = 5, max = 254, message = "Email cannot exceed 254 characters")
+        @Size(min = 6, max = 254, message = "Email cannot exceed 254 characters")
         String email
 
 ) {
