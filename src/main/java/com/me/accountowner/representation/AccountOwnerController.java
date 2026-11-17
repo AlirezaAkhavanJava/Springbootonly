@@ -43,7 +43,7 @@ public class AccountOwnerController {
                     message = "Username or email is incorrect"
             )
             String identifier) {
-        return accountOwnerMapper.fromAccountOwner(accountOwnerService.findAccountOwnerByUsernameOrEmail(identifier));
+        return accountOwnerMapper.fromAccountOwner(accountOwnerService.findAccountOwnerByUsernameOrEmail(identifier.toLowerCase()));
     }
 
     @GetMapping("/user/{username}")
@@ -56,7 +56,7 @@ public class AccountOwnerController {
             )
             String username
     ) {
-        AccountOwnerResponse owner = accountOwnerService.findByUsername(username);
+        AccountOwnerResponse owner = accountOwnerService.findByUsername(username.toLowerCase());
         return ResponseEntity.ok(owner);
     }
 }
