@@ -35,7 +35,9 @@ build/
 ### VS Code ###
 .vscode/
 
-### Mac OS ###
+
 .DS_Store
 credentials.properties
 credentials-local.properties
+
+RequirementEngineering.md
