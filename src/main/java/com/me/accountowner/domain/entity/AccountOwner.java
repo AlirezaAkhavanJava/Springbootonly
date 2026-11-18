@@ -38,6 +38,7 @@ public class AccountOwner {
     private String username;
 
     @Column(nullable = false)
+    @Getter
     private String passwordHash;
 
     @Column(unique = true, nullable = false)
