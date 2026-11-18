@@ -1,5 +1,6 @@
 package com.me.accountowner.representation;
 
+import com.me.Configuration.RegexPatterns;
 import com.me.accountowner.domain.dto.AccountOwnerResponse;
 import com.me.accountowner.domain.dto.CreateAccountOwnerRequest;
 import com.me.accountowner.domain.dto.CreateAccountOwnerRespond;
@@ -51,7 +52,7 @@ public class AccountOwnerController {
             @PathVariable
             @NotBlank
             @Pattern(
-                    regexp = "^[a-zA-Z0-9][a-zA-Z0-9_]{6,32}$",
+                    regexp = RegexPatterns.USERNAME,
                     message = "Username must contain 6–32 alphanumeric characters or underscores"
             )
             String username
