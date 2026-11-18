@@ -19,7 +19,7 @@ public class SecurityConfigFilterChains {
                 )
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/api/owner/**").permitAll()
-                        .requestMatchers("/test/api/**").hasRole("ADMIN")
+                        .requestMatchers("/test/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .formLogin(Customizer.withDefaults())
