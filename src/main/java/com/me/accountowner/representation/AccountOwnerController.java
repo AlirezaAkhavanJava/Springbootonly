@@ -1,6 +1,7 @@
 package com.me.accountowner.representation;
 
 import com.me.Configuration.RegexPatterns;
+import com.me.Configuration.ValidationMessages;
 import com.me.accountowner.domain.dto.AccountOwnerResponse;
 import com.me.accountowner.domain.dto.CreateAccountOwnerRequest;
 import com.me.accountowner.domain.dto.CreateAccountOwnerRespond;
@@ -40,8 +41,8 @@ public class AccountOwnerController {
             @PathVariable
             @NotBlank
             @Pattern(
-                    regexp = "^(?:[a-zA-Z0-9_]{5,254}|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})$",
-                    message = "Username or email is incorrect"
+                    regexp = RegexPatterns.IDENTIFIER_EMAIL_USERNAME,
+                    message = ValidationMessages.EMAIL_PATTERN
             )
             String identifier) {
         return accountOwnerMapper.fromAccountOwner(accountOwnerService.findAccountOwnerByUsernameOrEmail(identifier.toLowerCase()));
@@ -50,10 +51,10 @@ public class AccountOwnerController {
     @GetMapping("/user/{username}")
     public ResponseEntity<AccountOwnerResponse> findByUserName(
             @PathVariable
-            @NotBlank
+            @NotBlank(message = ValidationMessages.EMAIL_BLANK)
             @Pattern(
                     regexp = RegexPatterns.USERNAME,
-                    message = "Username must contain 6–32 alphanumeric characters or underscores"
+                    message = ValidationMessages.USERNAME_PATTERN
             )
             String username
     ) {
