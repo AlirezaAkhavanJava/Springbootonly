@@ -1,6 +1,7 @@
 package com.me.accountowner.domain.dto;
 
 import com.me.Configuration.RegexPatterns;
+import com.me.Configuration.ValidationMessages;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -8,26 +9,26 @@ import jakarta.validation.constraints.Size;
 
 public record CreateAccountOwnerRequest(
 
-        @NotBlank(message = "Username cannot be blank")
-        @Size(min = 6, max = 32, message = "Username must be between 6 and 32 characters")
+        @NotBlank(message = ValidationMessages.USERNAME_BLANK)
+        @Size(min = 6, max = 32, message = ValidationMessages.USERNAME_SIZE)
         @Pattern(
                 regexp = RegexPatterns.USERNAME,
-                message = "Username can only contain letters, numbers, and underscores"
+                message = ValidationMessages.USERNAME_PATTERN
         )
         String username,
 
-        @NotBlank(message = "Password cannot be blank")
-        @Size(min = 8, max = 72, message = "Password must be between 8 and 72 characters")
+        @NotBlank(message = ValidationMessages.PASSWORD_BLANK)
+        @Size(min = 8, max = 72, message = ValidationMessages.PASSWORD_SIZE)
         @Pattern(
                 regexp = RegexPatterns.STRONG_PASSWORD,
-                message = "Password must contain uppercase, lowercase, number, and special character"
+                message = ValidationMessages.PASSWORD_PATTERN
         )
         String passwordHash,
 
-        @NotBlank(message = "Email cannot be blank")
-        @Email(message = "Invalid email address")
-        @Size(min = 6, max = 254, message = "Email cannot exceed 254 characters")
-        @Pattern(regexp = RegexPatterns.EMAIL, message = "Email is invalid")
+        @NotBlank(message = ValidationMessages.EMAIL_BLANK)
+        @Email(message = ValidationMessages.EMAIL_PATTERN)
+        @Size(min = 6, max = 254, message = ValidationMessages.EMAIL_SIZE)
+        @Pattern(regexp = RegexPatterns.EMAIL, message = ValidationMessages.EMAIL_PATTERN)
         String email
 
 ) {
