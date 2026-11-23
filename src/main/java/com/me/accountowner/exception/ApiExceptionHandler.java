@@ -103,15 +103,8 @@ public class ApiExceptionHandler {
         ProblemDetail problem = ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, exception.getMessage());
         problem.setTitle("Account Not Found");
         problem.setDetail(exception.getMessage());
+        log.error("Account Not Found", exception);
         return problem;
     }
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ProblemDetail handleValidationExceptions(MethodArgumentNotValidException exception) {
-        ProblemDetail problem = ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, "Validation Failed");
-        Map<String, String> errors = new LinkedHashMap<>();
-        exception.getBindingResult().getFieldErrors().forEach(e -> errors.put(e.getField(), e.getDefaultMessage()));
-        problem.setProperty("errors", errors);
-        return problem;
-    }
 }

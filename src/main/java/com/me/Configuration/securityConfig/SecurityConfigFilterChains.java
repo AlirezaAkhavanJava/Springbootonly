@@ -18,7 +18,7 @@ public class SecurityConfigFilterChains {
                         .ignoringRequestMatchers("/api/owner/**")
                 )
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/api/owner/**").permitAll()
+                        .requestMatchers("/api/owners/**").permitAll()
                         .requestMatchers("/test/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )

@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Validated
 @RestController
-@RequestMapping("/api/owner")
+@RequestMapping("/api/owners")
 @RequiredArgsConstructor
 public class AccountOwnerController {
 

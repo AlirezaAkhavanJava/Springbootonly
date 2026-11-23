@@ -59,7 +59,7 @@ public class AccountOwner {
     @Enumerated(EnumType.STRING)
     @Setter(AccessLevel.NONE)
     @Column(name = "user_role", nullable = false)
-    private AccountOwnerRole role = AccountOwnerRole.USER;
+    private AccountOwnerRole role = AccountOwnerRole.ROLE_USER;
 
 
     @Builder

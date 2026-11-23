@@ -1,6 +1,6 @@
 package com.me.accountowner.domain;
 
 public enum AccountOwnerRole {
-    ADMIN,
-    USER,
+    ROLE_ADMIN,
+    ROLE_USER
 }
